@@ -71,7 +71,7 @@
             <tr>
                 <td><?= h($appointments->id) ?></td>
                 <td><?= h($appointments->patient_id) ?></td>
-                <td><?= h($appointments->doctor_id) ?></td>
+                <td><?= $this->Format->getName($appointments->doctor_id, 'doctors') ?></td>
                 <td><?= h($appointments->appointment_date) ?></td>
                 <td><?= h($appointments->created) ?></td>
                 <td><?= h($appointments->modified) ?></td>
@@ -111,7 +111,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Invoices', 'action' => 'view', $invoices]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Invoices', 'action' => 'edit', $invoices]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices], ['confirm' => __('Are you sure you want to delete # {0}?', $invoices)]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Invoices', 'action' => 'delete', $invoices], ['confirm' => __('Are you sure you want to delete # {0}?', $invoices->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
