@@ -79,5 +79,13 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+
+        // Check login
+        if($this->request->session()->read('Auth.User')){
+            $this->set('loggedIn', true);
+        }
+        else {
+            $this->set('loggedIn', false);
+        }
     }
 }

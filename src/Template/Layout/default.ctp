@@ -41,6 +41,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </li>
         </ul>
         <div class="top-bar-section">
+        <? if($loggedIn) : ?>
             <ul class="left">
                 <li><?= $this->Html->link(__('Patients'), ['controller' => 'patients', 'action' => 'index']); ?></li>
                 <li><?= $this->Html->link(__('Appointments'), ['controller' => 'appointments', 'action' => 'index']); ?></li>
@@ -52,6 +53,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <li><?= $this->Html->link(__('Manage Users'), ['controller' => 'users', 'action' => 'index']); ?></li>
                 <li><?= $this->Html->link(__('Logout'), ['controller' => 'users', 'action' => 'logout']); ?></li>
             </ul>
+            <? endif; ?>
         </div>
     </nav>
     <?= $this->Flash->render() ?>
